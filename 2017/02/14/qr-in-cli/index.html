@@ -12,7 +12,7 @@
 
 
 
-  <meta name="description" content="qr_in_cli"/>
+  <meta name="description" content="在cli快速生成二维码"/>
 
 
 
@@ -32,15 +32,28 @@
 <link rel="canonical" href="http://i.i2o.pw/2017/02/14/qr-in-cli/"/>
 
 
+<meta name="description" content="1brew install qrencode
+如其名，qrencode 是一个生成二维码的工具。
+看一下help:
+123456-t &amp;#123;PNG,EPS,SVG,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8&amp;#125;           specify the type of the generated image. (default=PNG)-o FI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="qr_in_cli">
+<meta property="og:title" content="在cli快速生成二维码">
 <meta property="og:url" content="http://i.i2o.pw/2017/02/14/qr-in-cli/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:image" content="http://i.i2o.pw/2017/02/14/qr-in-cli/qr.png">
-<meta property="og:updated_time" content="2017-02-14T02:41:18.000Z">
+<meta property="og:description" content="1brew install qrencode
+如其名，qrencode 是一个生成二维码的工具。
+看一下help:
+123456-t &amp;#123;PNG,EPS,SVG,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8&amp;#125;           specify the type of the generated image. (default=PNG)-o FI">
+<meta property="og:image" content="http://i.i2o.pw/2017/02/14/qr-in-cli/qr1.png">
+<meta property="og:image" content="http://i.i2o.pw/2017/02/14/qr-in-cli/qr2.png">
+<meta property="og:updated_time" content="2017-02-14T06:21:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="qr_in_cli">
-<meta name="twitter:image" content="http://i.i2o.pw/2017/02/14/qr-in-cli/qr.png">
+<meta name="twitter:title" content="在cli快速生成二维码">
+<meta name="twitter:description" content="1brew install qrencode
+如其名，qrencode 是一个生成二维码的工具。
+看一下help:
+123456-t &amp;#123;PNG,EPS,SVG,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8&amp;#125;           specify the type of the generated image. (default=PNG)-o FI">
+<meta name="twitter:image" content="http://i.i2o.pw/2017/02/14/qr-in-cli/qr1.png">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.2.x" />
@@ -77,7 +90,7 @@
 
 
 
-    <title> qr_in_cli · Hexo </title>
+    <title> 在cli快速生成二维码 · Hexo </title>
   </head>
 
   <body>
@@ -162,7 +175,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          qr_in_cli
+          在cli快速生成二维码
         
       </h1>
 
@@ -178,7 +191,18 @@
 
     <div class="post-content">
       
-        <img src="/2017/02/14/qr-in-cli/qr.png" alt="qr.png" title="">
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install qrencode</div></pre></td></tr></table></figure>
+<p>如其名，qrencode 是一个生成二维码的工具。</p>
+<p>看一下help:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">-t &#123;PNG,EPS,SVG,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8&#125;</div><div class="line">           specify the <span class="built_in">type</span> of the generated image. (default=PNG)</div><div class="line">-o FILENAME  write image to FILENAME. If <span class="string">'-'</span> is specified, the result</div><div class="line">           will be output to standard output. If -S is given, structured</div><div class="line">           symbols are written to FILENAME-01.png, FILENAME-02.png, ...</div><div class="line">           (suffix is removed from FILENAME, <span class="keyword">if</span> specified)</div></pre></td></tr></table></figure>
+<p>试一下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qrencode -t ANSI256 https://www.google.com</div></pre></td></tr></table></figure>
+<img src="/2017/02/14/qr-in-cli/qr1.png" alt="qr1.png" title="">
+<p>效果拔群。</p>
+<p>简化一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> qr=<span class="string">'qrencode -o - -t ANSI256'</span></div></pre></td></tr></table></figure>
+<img src="/2017/02/14/qr-in-cli/qr2.png" alt="qr2.png" title="">
+
       
     </div>
 

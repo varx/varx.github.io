@@ -159,7 +159,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/02/14/qr-in-cli/">qr_in_cli</a>
+          <a class="post-link" href="/2017/02/14/qr-in-cli/">在cli快速生成二维码</a>
         
       </h1>
 
@@ -179,7 +179,18 @@
         
 
         
-          <img src="/2017/02/14/qr-in-cli/qr.png" alt="qr.png" title="">
+          <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install qrencode</div></pre></td></tr></table></figure>
+<p>如其名，qrencode 是一个生成二维码的工具。</p>
+<p>看一下help:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">-t &#123;PNG,EPS,SVG,ANSI,ANSI256,ASCII,ASCIIi,UTF8,ANSIUTF8&#125;</div><div class="line">           specify the <span class="built_in">type</span> of the generated image. (default=PNG)</div><div class="line">-o FILENAME  write image to FILENAME. If <span class="string">'-'</span> is specified, the result</div><div class="line">           will be output to standard output. If -S is given, structured</div><div class="line">           symbols are written to FILENAME-01.png, FILENAME-02.png, ...</div><div class="line">           (suffix is removed from FILENAME, <span class="keyword">if</span> specified)</div></pre></td></tr></table></figure>
+<p>试一下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qrencode -t ANSI256 https://www.google.com</div></pre></td></tr></table></figure>
+<img src="/2017/02/14/qr-in-cli/qr1.png" alt="qr1.png" title="">
+<p>效果拔群。</p>
+<p>简化一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">alias</span> qr=<span class="string">'qrencode -o - -t ANSI256'</span></div></pre></td></tr></table></figure>
+<img src="/2017/02/14/qr-in-cli/qr2.png" alt="qr2.png" title="">
+
         
       
     </div>
